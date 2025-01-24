@@ -11,7 +11,8 @@
 	"main": "main.js",
 	"scripts": {
 		"ng": "ng",
-		"start": "npm run build:dev-watch",
+		"start": "npm run build:dev-watch && electron .",
+		"tt": "electron .",
 		"update-version": "node update-version",
 		"build": "ng build",
 		"build:dev": "npm run build --configuration development",

@@ -3,16 +3,13 @@
  */
 
 import { Injectable } from '@angular/core';
-import * as mixpanel from 'mixpanel-browser';
+import mixpanel from 'mixpanel-browser';
 
-@Injectable( {
-	providedIn: 'root'
-} )
+@Injectable({
+	providedIn: 'root',
+})
 export class MixpanelService {
-
-
-	constructor () {
-	}
+	constructor() {}
 
 	/**
 	 * Initialize mixpanel.
@@ -20,9 +17,9 @@ export class MixpanelService {
 	 * @param {string} userToken
 	 * @memberof MixpanelService
 	 */
-	init ( userToken: string, identifier: string = null ): void {
-		mixpanel.init( userToken );
-		mixpanel.identify( identifier || userToken );
+	init(userToken: string, identifier: string = null): void {
+		mixpanel.init(userToken);
+		mixpanel.identify(identifier || userToken);
 	}
 
 	/**
@@ -32,13 +29,13 @@ export class MixpanelService {
 	 * @param {*} [action={}] Actions object with custom properties.
 	 * @memberof MixpanelService
 	 */
-	track ( id: string, action: any = {} ): void {
-		mixpanel.track( id, action );
+	track(id: string, action: any = {}): void {
+		mixpanel.track(id, action);
 	}
 
-	setEmail ( email: string ) {
-		mixpanel.people.set( {
-			$email: email
-		} );
+	setEmail(email: string) {
+		mixpanel.people.set({
+			$email: email,
+		});
 	}
 }
